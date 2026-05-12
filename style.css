@@ -1,0 +1,580 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f3f6fb;
+  color: #1e293b;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* =========================
+ CARD
+========================= */
+
+.card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+  margin-bottom: 24px;
+}
+
+/* =========================
+ HEADER
+========================= */
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.logo-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #2563eb;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.main-header h1 {
+  font-size: 30px;
+  margin-bottom: 6px;
+  color: #0f172a;
+}
+
+.main-header p {
+  color: #64748b;
+  font-size: 15px;
+}
+
+/* =========================
+ SECTION HEADER
+========================= */
+
+.section-header {
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: #0f172a;
+}
+
+.section-header p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* =========================
+ UPLOAD SECTION
+========================= */
+
+.upload-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.selected-file-text {
+  font-size: 14px;
+  color: #475569;
+}
+
+/* =========================
+ BUTTONS
+========================= */
+
+.primary-btn,
+.secondary-btn,
+.table-btn,
+.close-btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.25s ease;
+  font-family: inherit;
+}
+
+.primary-btn {
+  background-color: #2563eb;
+  color: white;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.primary-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.secondary-btn {
+  background-color: #e2e8f0;
+  color: #0f172a;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.secondary-btn:hover {
+  background-color: #cbd5e1;
+}
+
+.secondary-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.table-btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.preview-btn {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.preview-btn:hover {
+  background-color: #bfdbfe;
+}
+
+.pdf-btn {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.pdf-btn:hover {
+  background-color: #fecaca;
+}
+
+.docx-btn {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.docx-btn:hover {
+  background-color: #bbf7d0;
+}
+
+.close-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background-color: #e2e8f0;
+  font-size: 18px;
+}
+
+.close-btn:hover {
+  background-color: #cbd5e1;
+}
+
+/* =========================
+ SUMMARY SECTION
+========================= */
+
+.summary-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.summary-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.summary-label {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.summary-card h3 {
+  font-size: 38px;
+  color: #0f172a;
+}
+
+/* =========================
+ ACTION BAR
+========================= */
+
+.action-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.search-container {
+  flex: 1;
+}
+
+.search-container input {
+  width: 100%;
+  max-width: 380px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  font-size: 15px;
+  outline: none;
+}
+
+.search-container input:focus {
+  border-color: #2563eb;
+}
+
+.bulk-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* =========================
+ SCHOOL TABLE
+========================= */
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.school-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.school-table thead {
+  background-color: #eff6ff;
+}
+
+.school-table th,
+.school-table td {
+  padding: 18px 14px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.school-table th {
+  font-size: 14px;
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.school-table td {
+  font-size: 14px;
+  color: #334155;
+}
+
+.school-name-cell {
+  font-weight: 600;
+}
+
+.action-cell {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.empty-text {
+  text-align: center;
+  padding: 30px;
+  color: #64748b;
+}
+
+/* =========================
+ MODAL
+========================= */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  z-index: 999;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 1100px;
+  max-height: 92vh;
+  overflow-y: auto;
+  border-radius: 24px;
+  padding: 28px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+/* =========================
+ PDF PAGE
+========================= */
+
+.pdf-page {
+  width: 210mm;
+
+  min-height: 297mm;
+
+  background: white;
+
+  padding: 4mm 8mm 10mm 8mm;
+
+  font-family: "Times New Roman", serif;
+
+  color: black;
+
+  overflow: hidden;
+}
+
+/* =========================
+ HEADER IMAGE
+========================= */
+
+.header-image-container {
+  width: 100%;
+
+  text-align: center;
+
+  margin-bottom: 0;
+}
+
+.header-image {
+  width: 190mm;
+
+  height: auto;
+
+  display: block;
+
+  margin: 0 auto;
+}
+
+/* =========================
+ SCHOOL INFO
+========================= */
+
+.school-info {
+  margin-top: 4px;
+
+  margin-bottom: 8px;
+
+  font-size: 13px;
+}
+
+.school-row {
+  display: flex;
+
+  align-items: center;
+
+  margin-bottom: 6px;
+}
+
+.label {
+  min-width: 48mm;
+
+  font-weight: bold;
+}
+
+.value {
+  flex: 1;
+
+  border-bottom: 1px dotted black;
+
+  padding-left: 8px;
+
+  height: 18px;
+}
+
+/* =========================
+ PDF TABLE
+========================= */
+
+.pdf-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+
+  font-size: 11px;
+}
+
+.cell {
+  border: 0.6px solid black;
+
+  padding: 2px 4px;
+
+  height: 34px;
+
+  vertical-align: middle;
+
+  line-height: 1.4;
+}
+
+.pdf-table th {
+  font-weight: bold;
+
+  text-align: center;
+}
+
+/* =========================
+ COLUMN WIDTHS
+========================= */
+
+.sl-cell {
+  width: 7%;
+
+  text-align: center;
+}
+
+.name-cell {
+  width: 36%;
+}
+
+.subject-cell {
+  width: 18%;
+}
+
+.mobile-cell {
+  width: 20%;
+}
+
+.signature-cell {
+  width: 20%;
+}
+
+/* =========================
+ SIGNATURE ROW
+========================= */
+
+.signature-row {
+  margin-top: 18px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  font-size: 12px;
+}
+
+/* =========================
+ RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 992px) {
+  .summary-section {
+    grid-template-columns: 1fr;
+  }
+
+  .action-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .bulk-actions {
+    width: 100%;
+  }
+
+  .bulk-actions button {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 14px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .header-left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-header h1 {
+    font-size: 24px;
+  }
+
+  .summary-card h3 {
+    font-size: 30px;
+  }
+
+  .school-table th,
+  .school-table td {
+    padding: 14px 10px;
+    font-size: 13px;
+  }
+
+  .modal-content {
+    padding: 18px;
+  }
+
+  .pdf-page {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .signature-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+/* =========================
+ SPACING AFTER TABLE FOR SPACE FOR SIGNATURE
+========================= */
+.after-table-space {
+  height: 24px;
+}

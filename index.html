@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>AHSTA Membership Generator</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="app-container">
+      <!-- =========================
+             HEADER
+        ========================== -->
+
+      <div class="card">
+        <div class="main-header">
+          <div class="header-left">
+            <div class="logo-wrapper">
+              <img
+                src="images/ahsta-logo.png"
+                alt="AHSTA Logo"
+                class="app-logo"
+              />
+            </div>
+
+            <div>
+              <h1>AHSTA Membership Generator</h1>
+
+              <p>Upload Excel file and generate school-wise membership forms</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =========================
+             UPLOAD SECTION
+        ========================== -->
+
+      <div class="card">
+        <div class="section-header">
+          <h2>Upload Excel File</h2>
+
+          <p>Supported columns: School, Name, Subject, Phone, District</p>
+        </div>
+
+        <div class="upload-box">
+          <input type="file" id="excelFileInput" accept=".xlsx,.xls" hidden />
+
+          <button id="uploadButton" class="primary-btn">
+            Upload Excel File
+          </button>
+
+          <div id="selectedFileName" class="selected-file-text">
+            No file selected
+          </div>
+        </div>
+      </div>
+
+      <!-- =========================
+             SUMMARY SECTION
+        ========================== -->
+
+      <div class="summary-section">
+        <div class="card summary-card">
+          <div class="summary-label">Total Schools</div>
+
+          <h3 id="totalSchools">0</h3>
+        </div>
+
+        <div class="card summary-card">
+          <div class="summary-label">Total Members</div>
+
+          <h3 id="totalMembers">0</h3>
+        </div>
+      </div>
+
+      <!-- =========================
+             ACTION BAR
+        ========================== -->
+
+      <div class="card">
+        <div class="action-bar">
+          <div class="search-container">
+            <input
+              type="text"
+              id="schoolSearchInput"
+              placeholder="Search school..."
+            />
+          </div>
+
+          <div class="bulk-actions">
+            <button id="downloadAllPdfButton" class="secondary-btn" disabled>
+              Download All PDF
+            </button>
+
+            <button id="downloadAllDocxButton" class="secondary-btn" disabled>
+              Download All DOCX
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- =========================
+             SCHOOL TABLE
+        ========================== -->
+
+      <div class="card">
+        <div class="table-wrapper">
+          <table class="school-table">
+            <thead>
+              <tr>
+                <th>Sl No</th>
+
+                <th>School Name</th>
+
+                <th>Members</th>
+
+                <th>Actions</th>
+              </tr>
+            </thead>
+
+            <tbody id="schoolTableBody">
+              <tr>
+                <td colspan="4" class="empty-text">
+                  Upload Excel file to begin
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================
+         PREVIEW MODAL
+    ========================== -->
+
+    <div id="previewModal" class="modal hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Preview</h2>
+
+          <button id="closePreviewButton" class="close-btn">✕</button>
+        </div>
+
+        <div id="previewContainer"></div>
+      </div>
+    </div>
+
+    <!-- =========================
+         LIBRARIES
+    ========================== -->
+
+    <!-- XLSX -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+    <!-- html2canvas -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+    <!-- jsPDF -->
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+
+    <!-- html2pdf -->
+    <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
+
+    <!-- JSZip -->
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+
+    <!-- FileSaver -->
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+
+    <!-- DOCX -->
+    <script src="https://unpkg.com/docx@8.5.0/build/index.umd.js"></script>
+
+    <!-- HTML DOCX -->
+    <script src="https://unpkg.com/html-docx-js/dist/html-docx.js"></script>
+
+    <!-- APP JS -->
+    <script src="app.js"></script>
+  </body>
+</html>

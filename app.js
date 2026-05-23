@@ -355,7 +355,7 @@ function generateMembershipPages(schoolName) {
                             </span>
 
                             <span class="value">
-                                ${district}
+                                
                             </span>
 
                         </div>

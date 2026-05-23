@@ -273,22 +273,7 @@ function generateMembershipTemplate(schoolName) {
   return generateMembershipPages(schoolName).join("");
 }
 
-// ===============================
-// PARSE SCHOOL INFO
-// ===============================
-function parseSchoolInfo(schoolText) {
-  const parts = schoolText.split(",").map((part) => part.trim());
 
-  const district = parts.length > 1 ? parts[parts.length - 1] : "";
-
-  const schoolCodeName = parts.slice(0, parts.length - 1).join(", ");
-
-  return {
-    schoolCodeName,
-
-    district,
-  };
-}
 
 // ===============================
 // GENERATE PAGES
@@ -298,9 +283,9 @@ function generateMembershipPages(schoolName) {
 
   // const district = members[0]?.district || "ERNAKULAM";
 
-  const schoolInfo = parseSchoolInfo(schoolName);
+  const district = "";
 
-  const district = schoolInfo.district;
+
 
   const rowsPerPage = 18;
 
